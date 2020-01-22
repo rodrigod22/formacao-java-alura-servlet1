@@ -2,7 +2,7 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%> 
- <%@ page import="java.util.List,br.com.alura.gerenciador.servlet.Empresa" %>
+ <%@ page import="java.util.List,br.com.alura.gerenciador.modelo.Empresa" %>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   	
  <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   	
 <!DOCTYPE html>
@@ -23,8 +23,8 @@
     	<fmt:formatDate value="${empresa.dataAbertura }" var="dataAbertura" pattern="dd/MM/yyyy"/>
     		<li>
     		 ${ empresa.nome } - ${ dataAbertura }
-    		   <a href="/gerenciador/mostraEmpresa?id=${empresa.id}">altera</a>
-    		  <a href="/gerenciador/removeEmpresa?id=${empresa.id}">remove</a>
+    		   <a href="/gerenciador/entrada?id=${empresa.id}&acao=AlteraEmpresa">altera</a>
+    		  <a href="/gerenciador/entrada?id=${empresa.id}&acao=RemoveEmpresa">remove</a>
     		 </li>
     	</c:forEach> 
     </ul>
