@@ -1,15 +1,14 @@
 package br.com.alura.gerenciador.acao;
 
 import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.modelo.Banco;
 
-public class RemoveEmpresa {
+public class RemoveEmpresa implements Acao{
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException {		
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {		
 		System.out.println("Removendo Empresa");
 
 		String empresa = (String) request.getParameter("id");
@@ -18,6 +17,6 @@ public class RemoveEmpresa {
 		Banco banco = new Banco();
 		banco.removeEmpresa(empresaId);
 		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";		
 	}
 }
