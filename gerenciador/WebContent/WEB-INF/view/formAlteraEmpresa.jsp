@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:import url="logout-parcial.jsp"/>
 	<fmt:formatDate value="${empresa.dataAbertura}" var="data"/>
 	<form method="post" action="${linkForm}">
 		<label for="nome">Nome</label>		
